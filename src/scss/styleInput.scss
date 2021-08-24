@@ -1,0 +1,14 @@
+input {
+   border: none;
+   border-bottom: 2px solid #3592FF;
+   cursor: pointer;
+   width: 180px;
+   height: 34px;
+   overflow: hidden;
+ }
+ 
+ input:hover {
+   border-color: rgba(82, 169, 236, 0.301);
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+   outline: 0 none;
+ }

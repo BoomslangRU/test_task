@@ -1,1 +1,130 @@
-*{color:red;text-align:center}hr{margin:50px}.box{border:1px solid red}
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/index.scss ***!
+  \**************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap);
+/*!******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/index.scss (1) ***!
+  \******************************************************************************************************************/
+input {
+  border: none;
+  border-bottom: 2px solid #3592FF;
+  cursor: pointer;
+  width: 180px;
+  height: 34px;
+  overflow: hidden;
+}
+
+input:hover {
+  border-color: rgba(82, 169, 236, 0.301);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+  outline: 0 none;
+}
+
+.buttonBlock button {
+  border-radius: 6px;
+  background-color: #6CB0FF;
+  border: 1px solid #154e4b;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  color: #d7f8f8;
+  display: block;
+  width: 180px;
+  font-size: 14px;
+  height: 30px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  padding: 4px 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.buttonBlock button:hover {
+  border-color: rgba(82, 168, 236, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+  outline: 0 none;
+}
+
+* {
+  font-family: Roboto;
+  color: #535353;
+  font-size: 44px;
+}
+
+.box {
+  margin: 30px auto;
+  width: 706px;
+  height: 884px;
+  box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.774), 0 0px 0px 0 rgba(0, 0, 0, 0.12), 0 0px 0px 0px rgba(0, 0, 0, 0.205);
+}
+
+.box-title {
+  margin: 96px 70px 0 72px;
+  position: absolute;
+  width: 560px;
+  font-weight: normal;
+  color: black;
+}
+
+.error {
+  color: #FF0000;
+  font-style: italic;
+  font-size: 22px;
+}
+
+.form-pan {
+  position: absolute;
+  margin: 220px 102px 0 100px;
+}
+
+.form-pan input {
+  width: 500px;
+  height: 100px;
+  font-size: 36px;
+}
+
+.style-label {
+  color: #9A9A9A;
+  font-size: 24px;
+}
+
+.form-expire {
+  position: absolute;
+  margin: 416px 480px 0 100px;
+}
+
+.form-expire input {
+  width: 60px;
+  height: 52px;
+}
+
+.form-cvc {
+  position: absolute;
+  margin: 416px 100px 0 442px;
+}
+
+.form-cvc input {
+  width: 160px;
+  height: 50px;
+}
+
+.form-cardholder {
+  position: absolute;
+  margin: 562px 104px 0 100px;
+}
+
+.form-cardholder input {
+  width: 500px;
+  height: 50px;
+}
+
+.buttonBlock button {
+  position: absolute;
+  margin: 730px 102px 0 100px;
+  width: 500px;
+  height: 84px;
+  font-size: 44px;
+}
+
+.buttonBlock button:disabled {
+  background-color: #9A9A9A;
+}
