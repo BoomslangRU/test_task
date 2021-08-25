@@ -1,10 +1,10 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 
-import mainState from './mainReducer'
+import mainReducer from './mainReducer'
 
 const reducers = combineReducers({
-   paymentPage: mainState
+   paymentPage: mainReducer
 })
 
 const store = createStore(reducers, applyMiddleware(thunkMiddleware))

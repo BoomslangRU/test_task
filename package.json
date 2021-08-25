@@ -10,7 +10,7 @@
   },
   "keywords": [
     "React",
-    "MobX"
+    "Redux"
   ],
   "author": "Boomslang",
   "license": "ISC",
