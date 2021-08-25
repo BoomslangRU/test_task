@@ -1,10 +1,17 @@
 import React from 'react'
+import { Provider } from 'react-redux'
 
-import Payment from '../components/payment/Payment'
+import PaymentContainer from './components/payment/PaymentContainer'
+import store from './store/store'
+
+
 
 const App = () => {
+
    return (
-      <Payment />
+      <Provider store={store}>
+         <PaymentContainer />
+      </Provider>
    )
 }
 

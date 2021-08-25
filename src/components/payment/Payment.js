@@ -1,54 +1,31 @@
 import { useFormik } from 'formik'
 import React from 'react'
 
-const Payment = () => {
+import '../../scss/payment.scss'
+import validationSchema from '../common/validationSchema'
+
+const Payment = (props) => {
+   console.log('Props :', props);
 
    const initialValues = {
       pan: '',
       month: '',
       year: '',
-      cardholder: '',
-      cvc: ''
+      cvc: '',
+      cardholder: ''
    }
 
    const onSubmit = e => {
-      const expire = `${e.month}/${e.year}`
-      console.log('Form data :', expire)
-   }
-
-   const validate = e => {
-      const errors = {}
-
-      if (!e.pan) {
-         errors.pan = 'Required'
-      }
-
-      if (!e.month) {
-         errors.month = 'Required'
-      }
-
-      if (!e.year) {
-         errors.year = 'Required'
-      }
-
-      if (!e.cardholder) {
-         errors.cardholder = 'Required'
-      }
-
-      if (!e.cvc) {
-         errors.cvc = 'Required'
-      }
-
-      return errors
+      e.expire = `${e.month}/${e.year}`
+      console.log('Form data :', e)
    }
 
    const formik = useFormik({
       initialValues,
       onSubmit,
-      validate
+      validationSchema
    })
 
-   console.log('Errors :', formik.errors);
    return (
       <div className='box'>
          <div>
@@ -67,12 +44,18 @@ const Payment = () => {
                         type='text'
                         name='pan'
                         id='pan'
+                        onBlur={formik.handleBlur}
                         onChange={formik.handleChange}
                         value={formik.values.pan}
                      />
+
+                     {/* error messages */}
                      {formik.errors.pan
+                        ? <hr className='error-hr' />
+                        : <hr className='main-hr' />}
+                     {formik.errors.pan || formik.touched.pan
                         ? <div className='error'>{formik.errors.pan}</div>
-                        : null}
+                        : undefined}
                   </div>
                </div>
 
@@ -86,6 +69,7 @@ const Payment = () => {
                         type='text'
                         name='month'
                         id='month'
+                        onBlur={formik.handleBlur}
                         onChange={formik.handleChange}
                         value={formik.values.month}
                      />
@@ -94,13 +78,21 @@ const Payment = () => {
                         type='text'
                         name='year'
                         id='year'
+                        onBlur={formik.handleBlur}
                         onChange={formik.handleChange}
                         value={formik.values.year}
                      />
                   </div>
+
+                  {/* error messages */}
                   {formik.errors.month || formik.errors.year
-                     ? <div className='error'>{formik.errors.month || formik.errors.year}</div>
-                     : null}
+                     ? <hr className='error-hr' />
+                     : <hr className='main-hr' />}
+                  {(formik.errors.month || formik.errors.cvc) || (formik.errors.year || formik.errors.cvc)
+                     ? <div className='error'>
+                        {formik.errors.month || formik.errors.year}
+                     </div>
+                     : undefined}
                </div>
 
                {/* input cvc code  */}
@@ -113,12 +105,18 @@ const Payment = () => {
                         type='password'
                         name='cvc'
                         id='cvc'
+                        onBlur={formik.handleBlur}
                         onChange={formik.handleChange}
                         value={formik.values.cvc}
                      />
+
+                     {/* error messages */}
                      {formik.errors.cvc
+                        ? <hr className='error-hr' />
+                        : <hr className='main-hr' />}
+                     {formik.errors.cvc || formik.touched.cvc
                         ? <div className='error'>{formik.errors.cvc}</div>
-                        : null}
+                        : undefined}
                   </div>
                </div>
 
@@ -132,12 +130,18 @@ const Payment = () => {
                         type='text'
                         name='cardholder'
                         id='cardholder'
+                        onBlur={formik.handleBlur}
                         onChange={formik.handleChange}
                         value={formik.values.cardholder}
                      />
+
+                     {/* error messages */}
                      {formik.errors.cardholder
+                        ? <hr className='error-hr' />
+                        : <hr className='main-hr' />}
+                     {formik.errors.cardholder || formik.touched.cardholder
                         ? <div className='error'>{formik.errors.cardholder}</div>
-                        : null}
+                        : undefined}
                   </div>
                </div>
 

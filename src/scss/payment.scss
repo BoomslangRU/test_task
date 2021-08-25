@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import './styleInput.scss';
 @import './styleButton.scss';
 
@@ -9,17 +9,14 @@ $inactive-color: #9A9A9A;
 
 * {
    font-family: Roboto;
-   color: #535353;
    font-size: 44px;
 }
-
 .box {
    margin: 30px auto;
    width: 706px;
-   height: 884px;
+   height: 904px;
    box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.774), 0 0px 0px 0 rgba(0,0,0,.12), 0 0px 0px 0px rgba(0, 0, 0, 0.205);
 }
-
 .box-title {
    margin: 96px 70px 0 72px;
    position: absolute;
@@ -28,29 +25,22 @@ $inactive-color: #9A9A9A;
    font-weight: normal;
    color: black;
 }
-
-.error {
-   color: $error-color;
-   font-style: italic;
-   font-size: 22px;
-}
-
 .form-pan {
    position: absolute;
    margin: 220px 102px 0 100px;
 }
 .form-pan input {
    width: 500px;
-   height: 100px;
+   height: 70px;
    font-size: 36px;
 }
 .style-label {
-   color: $inactive-color;
-   font-size: 24px;  
+   font-size: 24px;
+   color: $inactive-color;  
 }
 .form-expire {
    position: absolute;
-   margin: 416px 480px 0 100px;
+   margin: 390px 480px 0 100px;
 }
 .form-expire input {
    width: 60px;
@@ -58,11 +48,12 @@ $inactive-color: #9A9A9A;
 }
 .form-cvc {
    position: absolute;
-   margin: 416px 100px 0 442px;
+   margin: 390px 100px 0 442px;
 }
 .form-cvc input {
    width: 160px;
-   height: 50px;
+   height: 52px;
+   text-align: center;
 }
 .form-cardholder {
    position: absolute;
@@ -70,16 +61,30 @@ $inactive-color: #9A9A9A;
 }
 .form-cardholder input {
    width: 500px;
-   height: 50px;
+   height: 70px;
 }
 .buttonBlock button {
    position: absolute;
-   margin: 730px 102px 0 100px;
+   margin: 750px 102px 0 100px;
    width: 500px;
    height: 84px;
    font-size: 44px;
 }
-
 .buttonBlock button:disabled {
    background-color: $inactive-color;
+}
+
+.main-hr {
+   border-bottom: 2px solid $main-color;
+   margin: 0;
+}
+.error {
+   color: $error-color;
+   font-style: italic;
+   font-size: 22px;
+   margin: 0;
+}
+.error-hr {
+   border-bottom: 2px solid $error-color;
+   margin: 0;
 }
