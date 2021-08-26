@@ -1,19 +1,35 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Component } from 'react'
 import { connect } from 'react-redux'
 
-import Payment from './Payment'
+import PaymentForm from './PaymentForm'
+import { makePayment } from '../../store/mainReducer'
+import Loader from './components/loader'
+import StatusRequestPage from './components/StatusRequestPage'
 
 class PaymentContainer extends Component {
    render() {
+
+      if (this.props.isFetching) {
+         return <Loader />
+      }
+
       return (
-         <Payment {...this.props} />
+         <Fragment>
+            {
+               this.props.resultQuery
+                  ? <StatusRequestPage {...this.props} />
+                  : <PaymentForm {...this.props} />
+            }
+
+         </Fragment>
       )
    }
 }
 
 const mapStateToProps = state => ({
-   profile: state.paymentPage.profile
+   resultQuery: state.paymentPage.resultQuery,
+   isFetching: state.paymentPage.isFetching
 })
 
-export default connect(mapStateToProps, {})(PaymentContainer)
+export default connect(mapStateToProps, { makePayment })(PaymentContainer)

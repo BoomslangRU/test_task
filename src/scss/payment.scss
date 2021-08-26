@@ -11,13 +11,13 @@ $inactive-color: #9A9A9A;
    font-family: Roboto;
    font-size: 44px;
 }
-.box {
+.form {
    margin: 30px auto;
    width: 706px;
    height: 904px;
    box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.774), 0 0px 0px 0 rgba(0,0,0,.12), 0 0px 0px 0px rgba(0, 0, 0, 0.205);
 }
-.box-title {
+.form-title {
    margin: 96px 70px 0 72px;
    position: absolute;
    width: 560px;
@@ -34,7 +34,7 @@ $inactive-color: #9A9A9A;
    height: 70px;
    font-size: 36px;
 }
-.style-label {
+.form-label {
    font-size: 24px;
    color: $inactive-color;  
 }

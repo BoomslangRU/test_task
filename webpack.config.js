@@ -33,10 +33,6 @@ module.exports = {
                }
             }
          },
-         // {
-         //    test: /\.css$/i,
-         //    use: [MiniCssExtractPlugin.loader, 'css-loader'],
-         // },
          {
             test: /\.s[ac]ss$/i,
             use: [
@@ -47,6 +43,10 @@ module.exports = {
                // Compiles Sass to CSS
                'sass-loader',
             ],
+         },
+         {
+            test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+            type: 'asset/resource',
          }
       ]
    }

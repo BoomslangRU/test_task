@@ -17,7 +17,7 @@ const Payment = (props) => {
 
    const onSubmit = e => {
       e.expire = `${e.month}/${e.year}`
-      console.log('Form data :', e)
+      props.makePayment(e.pan, e.expire, e.cardholder, e.cvc)
    }
 
    const formik = useFormik({
@@ -27,9 +27,9 @@ const Payment = (props) => {
    })
 
    return (
-      <div className='box'>
+      <div className='form'>
          <div>
-            <h2 className='box-title'>Оплата банковской картой</h2>
+            <h2 className='form-title'>Оплата банковской картой</h2>
          </div>
          <div>
             <form onSubmit={formik.handleSubmit}>
@@ -37,7 +37,7 @@ const Payment = (props) => {
                {/* input card number */}
                <div className='form-pan'>
                   <div>
-                     <label className='style-label' htmlFor='pan'>Номер карты</label>
+                     <label className='form-label' htmlFor='pan'>Номер карты</label>
                   </div>
                   <div>
                      <input
@@ -62,7 +62,7 @@ const Payment = (props) => {
                {/* card expiry date  */}
                <div className='form-expire'>
                   <div>
-                     <label className='style-label' htmlFor='expire'>Месяц/Год</label>
+                     <label className='form-label' htmlFor='expire'>Месяц/Год</label>
                   </div>
                   <div>
                      <input
@@ -98,7 +98,7 @@ const Payment = (props) => {
                {/* input cvc code  */}
                <div className='form-cvc'>
                   <div>
-                     <label className='style-label' htmlFor='cvc'>Код</label>
+                     <label className='form-label' htmlFor='cvc'>Код</label>
                   </div>
                   <div>
                      <input
@@ -123,7 +123,7 @@ const Payment = (props) => {
                {/* input card holder  */}
                <div className='form-cardholder'>
                   <div>
-                     <label className='style-label' htmlFor='cardholder'>Владелец карты</label>
+                     <label className='form-label' htmlFor='cardholder'>Владелец карты</label>
                   </div>
                   <div>
                      <input
