@@ -31,22 +31,30 @@ const setResultQuery = (result) => ({ type: SET_RESULT_QUERY, result })
 
 
 export const makePayment = (pan, expire, cardholder, cvc) => async (dispatch) => {
-   dispatch(setIsFetching(true))
-   const response = await paymentAPI.makePayment(pan, expire, cardholder, cvc)
-   dispatch(setPitId(response.result.pit))
-   waitingStatusPayment()
+   try {
+      dispatch(setIsFetching(true))
+      const response = await paymentAPI.makePayment(pan, expire, cardholder, cvc)
+      dispatch(setPitId(response.result.pit))
+      waitingStatusPayment()
+   } catch (e) {
+      console.error(e)
+   }
 }
 
 const waitingStatusPayment = () => async (dispatch) => {
    const response = await paymentAPI.waitingStatus(pit)
-   if (response.status === 'ok') {
-      dispatch(setIsFetching(true))
-      dispatch(setResultQuery('ok'))
-   } else if (response.status === 'fail') {
-      dispatch(setIsFetching(true))
-      dispatch(setResultQuery('fail'))
-   } else {
-      firstCallRequest()
+   try {
+      if (response.status === 'ok') {
+         dispatch(setIsFetching(false))
+         dispatch(setResultQuery('ok'))
+      } else if (response.status === 'fail') {
+         dispatch(setIsFetching(false))
+         dispatch(setResultQuery('fail'))
+      } else {
+         firstCallRequest()
+      }
+   } catch (e) {
+      console.error(e)
    }
 }
 
