@@ -3,11 +3,20 @@ import '../../../scss/statusRequestPage.scss'
 import imageOk from '../../../assets/images/ok.png'
 import imageFail from '../../../assets/images/fail.png'
 
-const StatusRequestPage = (props) => {
+const StatusRequestPage = ({ resultQuery }) => {
    return (
       <div className='status'>
-         {props.resultQuery === 'ok' && <Fragment><h2 className='status-text-ok'>Оплата произошла успешно</h2><img className='status-images' src={imageOk} /></Fragment>}
-         {props.resultQuery === 'fail' && <Fragment><h2 className='status-text-fail'>Произошла ошибка</h2><img className='status-images' src={imageFail} /></Fragment>}
+         {resultQuery === 'ok' &&
+            <Fragment>
+               <h2 className='status__text-ok'>Оплата произошла успешно</h2>
+               <img src={imageOk} />
+            </Fragment>}
+
+         {resultQuery === 'fail' &&
+            <Fragment>
+               <h2 className='status__text-fail'>Произошла ошибка</h2>
+               <img src={imageFail} />
+            </Fragment>}
       </div>
    )
 }

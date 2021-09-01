@@ -42,14 +42,14 @@ export const makePayment = (pan, expire, cardholder, cvc) => async (dispatch) =>
 }
 
 const waitingStatusPayment = () => async (dispatch) => {
-   const response = await paymentAPI.waitingStatus(pit)
    try {
+      const response = await paymentAPI.waitingStatus(pit)
       if (response.status === 'ok') {
-         dispatch(setIsFetching(false))
          dispatch(setResultQuery('ok'))
-      } else if (response.status === 'fail') {
          dispatch(setIsFetching(false))
+      } else if (response.status === 'fail') {
          dispatch(setResultQuery('fail'))
+         dispatch(setIsFetching(false))
       } else {
          firstCallRequest()
       }

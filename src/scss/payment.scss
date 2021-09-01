@@ -11,80 +11,84 @@ $inactive-color: #9A9A9A;
    font-family: Roboto;
    font-size: 44px;
 }
-.form {
+body{
+   background: #E5E5E5;
+}
+.form{
    margin: 30px auto;
    width: 706px;
    height: 904px;
+   background: $main-background;
    box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.774), 0 0px 0px 0 rgba(0,0,0,.12), 0 0px 0px 0px rgba(0, 0, 0, 0.205);
-}
-.form-title {
-   margin: 96px 70px 0 72px;
-   position: absolute;
-   width: 560px;
-
-   font-weight: normal;
-   color: black;
-}
-.form-pan {
-   position: absolute;
-   margin: 220px 102px 0 100px;
-}
-.form-pan input {
-   width: 500px;
-   height: 70px;
-   font-size: 36px;
-}
-.form-label {
-   font-size: 24px;
-   color: $inactive-color;  
-}
-.form-expire {
-   position: absolute;
-   margin: 390px 480px 0 100px;
-}
-.form-expire input {
-   width: 60px;
-   height: 52px;
-}
-.form-cvc {
-   position: absolute;
-   margin: 390px 100px 0 442px;
-}
-.form-cvc input {
-   width: 160px;
-   height: 52px;
-   text-align: center;
-}
-.form-cardholder {
-   position: absolute;
-   margin: 562px 104px 0 100px;
-}
-.form-cardholder input {
-   width: 500px;
-   height: 70px;
-}
-.buttonBlock button {
-   position: absolute;
-   margin: 750px 102px 0 100px;
-   width: 500px;
-   height: 84px;
-   font-size: 44px;
-}
-.buttonBlock button:disabled {
-   background-color: $inactive-color;
+   .form__title{
+      margin: 96px 70px 0 72px;
+      position: absolute;
+      width: 560px;
+      font-weight: normal;
+      color: black;
+   }
+   .form__label{
+      font-size: 24px;
+      color: $inactive-color;  
+   }
+   .form__pan{
+      position: absolute;
+      margin: 220px 102px 0 100px;
+      input{
+         width: 500px;
+         height: 70px;
+         font-size: 36px;
+      }
+   }
+   .form__expire{
+      position: absolute;
+      margin: 390px 480px 0 100px;
+      input{
+         width: 60px;
+         height: 52px;
+      }
+   }
+   .form__cvc{
+      position: absolute;
+      margin: 390px 100px 0 442px;
+      input{
+         width: 160px;
+         height: 52px;
+         text-align: center;
+      }
+   }
+   .form__cardholder{
+      position: absolute;
+      margin: 562px 104px 0 100px;
+      input{
+         width: 500px;
+         height: 70px;
+      }
+   }
+   .buttonBlock button{
+      position: absolute;
+      margin: 750px 102px 0 100px;
+      width: 500px;
+      height: 84px;
+      font-size: 44px;
+      &:disabled{
+         background-color: $inactive-color;
+   }
 }
 
-.main-hr {
-   border-bottom: 2px solid $main-color;
-   margin: 0;
-}
-.error {
-   color: $error-color;
-   font-style: italic;
-   font-size: 22px;
-   margin: 0;
-}
-.error-hr {
-   border-bottom: 2px solid $error-color;
-   margin: 0;
+// error output 
+   .error{
+      color: $error-color;
+      font-style: italic;
+      font-size: 22px;
+      margin: 0;
+   }
+   .error__hr{
+      border-bottom: 2px solid $error-color;
+      margin: 0;
+   }
+   .main__hr{
+      border-bottom: 2px solid $main-color;
+      margin: 0;
+   }
 }

@@ -18,8 +18,8 @@ class PaymentContainer extends Component {
          <Fragment>
             {
                this.props.resultQuery
-                  ? <StatusRequestPage {...this.props} />
-                  : <PaymentForm {...this.props} />
+                  ? <StatusRequestPage resultQuery={this.props.resultQuery} />
+                  : <PaymentForm makePayment={this.props.makePayment} />
             }
 
          </Fragment>

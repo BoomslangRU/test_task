@@ -8,6 +8,7 @@ const instance = axios.create({
 
 export const paymentAPI = {
    makePayment(pan, expire, cardholder, cvc) {
+      debugger
       return instance.post(`api`, {
          "jsonrpc": "2.0",
          "id": randomId(),
